@@ -1,7 +1,7 @@
 import "../styles/Login.css";
 import React, { useState, useRef } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import Home from "./Home";
+import Home from "./Dashboard";
 
 function Login() {
   // ********states start**********

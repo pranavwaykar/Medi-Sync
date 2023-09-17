@@ -9,6 +9,14 @@ const handleClick = () => {
   localStorage.clear();
 };
 
+
+const scrollToSelector = (selector) => {
+  const element = document.querySelector(selector);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 function Navbar() {
   return (
     <>
@@ -16,12 +24,12 @@ function Navbar() {
         <div className="container-fluid">
           {/* navbar brand img start */}
           <Link className="navbar-brand " to="/">
-            <img id="logo-img"
+            <img
+              id="logo-img"
               // style={{ height: "50px", width: "90%" }}
               src="https://cdn-icons-png.flaticon.com/512/2785/2785544.png"
               alt="image"
             />
-            
           </Link>
           {/* navbar brand img end*/}
 
@@ -32,7 +40,7 @@ function Navbar() {
           {/* heading end */}
 
           {/* toggle button start */}
-          
+
           <button
             class="navbar-toggler "
             type="button"
@@ -40,8 +48,7 @@ function Navbar() {
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="true"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           {/* toggle button end */}
@@ -52,18 +59,20 @@ function Navbar() {
                 <Link
                   className="nav-link "
                   aria-current="page"
-                  style={{ color: "red" }}
-                ></Link>
+                  style={{ color: "red" }}></Link>
               </li>
               <li className="email m-3">
-                <h2 class="email-nav text-center" id="email-heading" style={{ color: "white" }}>
+                <h2
+                  class="email-nav text-center"
+                  id="email-heading"
+                  style={{ color: "white" }}>
                   {getemail}
                 </h2>
               </li>
 
               <li className="nav-item f-right m-auto">
                 {/* <NavLink className="btn btn-outline-dark btn-info" to="/" onClick={handleClick} role="button">Logout</NavLink> */}
-                <NavLink to="/">
+                {/* <NavLink to="/">
                   <button
                     className="btn btn-danger btn-md  "
                     onClick={handleClick}
@@ -71,7 +80,31 @@ function Navbar() {
                   >
                     Logout
                   </button>
-                </NavLink>
+                </NavLink> */}
+
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item ">
+                    <Link
+                      className="nav-link nav-right-seg-text"
+                      onClick={() => scrollToSelector("#home-section")}>
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item ">
+                    <Link
+                      className="nav-link nav-right-seg-text"
+                      onClick={() => scrollToSelector("#doctors-section")}>
+                      Doctors
+                    </Link>
+                  </li>
+                  <li className="nav-item ">
+                    <Link
+                      className="nav-link nav-right-seg-text"
+                      onClick={() => scrollToSelector("#patients-section")}>
+                      Patients
+                    </Link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>

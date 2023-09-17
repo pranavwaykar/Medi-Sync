@@ -4,12 +4,33 @@
 }
 
 .navbar-container {
-  height: 80px;
+  height: 65px;
 }
 
 .navbar-brand {
   margin-bottom: 10px !important;
   margin-right: 5px !important;
+}
+
+#heading-title {
+  float: left;
+  font-size: 25px;
+}
+
+.email-nav {
+  font-size: 25px;
+}
+
+.nav-right-seg-text {
+  color: white !important;
+  font-weight: 20%;
+  font-size: 25px;
+  margin-left: 10px;
+  transition: color 0.3s; 
+}
+
+.nav-right-seg-text:hover {
+  color: #CD1010 !important; 
 }
 
 @media only screen and (max-width: 700px) {
@@ -27,14 +48,6 @@
         font-size: 30px;
     } */
 }
-/* 
-@media only screen and (max-width:570px){
-
-    #heading{
-        font-size: 27px;
-    }
-    
-} */
 
 @media only screen and (max-width: 600px) {
   /* #heading{
